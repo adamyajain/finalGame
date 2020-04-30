@@ -167,11 +167,11 @@ function draw() {
       energy = energy - 1;
       blueBulletGroup.destroyEach();
     }
-    if(touches.length>0||keyDown("1")){
+    if(touches.length>0||mousePressedOver(player1)){
       spawnGreenBullets();
       touches = [];
     }
-    if(touches.length>0||keyDown("2")){
+    if(touches.length>0||mousePressedOver(player2)){
       spawnBlueBullets();
       touches = [];
     }

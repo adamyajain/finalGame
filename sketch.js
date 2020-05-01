@@ -99,7 +99,42 @@ function draw() {
   greenBulletGroup.bounceOff(edges);
   player2.bounceOff(edges);
   player1.bounceOff(edges);
-  
+      if(player1.x<mouseX){
+      player1.x = mouseX-50;
+      player1.rotation = 270;
+
+    }
+    if(player1.x>mouseX){
+      player1.x = mouseX+50;
+      player1.rotation = 90;
+    }
+    if(player1.y<mouseY){
+      player1.Y = mouseY-50;
+      player1.rotation = 180;
+    }
+    if(player1.y>mouseY){
+      player1.y = mouseY+50;
+      player1.rotation = 360;
+      player1.rotationSpeed = 5;
+    }
+       if(player2.x<mouseX){
+      player2.x = mouseX-50;
+      player2.rotation = 270;
+
+    }
+    if(player1.x>mouseX){
+      player2.x = mouseX+50;
+      player2.rotation = 90;
+    }
+    if(playe2.y<mouseY){
+      player2.Y = mouseY-50;
+      player2.rotation = 180;
+    }
+    if(player2.y>mouseY){
+      player2.y = mouseY+50;
+      player2.rotation = true;
+      player2.rotationSpeed = 5;
+    }
     if(touches.length>0||keyWentDown("UP_ARROW")){
       player1.velocityY = -5;
       player1.rotation = 0;
@@ -167,13 +202,11 @@ function draw() {
       energy = energy - 1;
       blueBulletGroup.destroyEach();
     }
-    if(touches.length>0||mousePressedOver(player1)){
+    if(frameCount%100===0){
       spawnGreenBullets();
-      touches = [];
     }
-    if(touches.length>0||mousePressedOver(player2)){
+    if(frameCount%50===0){
       spawnBlueBullets();
-      touches = [];
     }
     if(energy<0){
       var rand = random(1,2);

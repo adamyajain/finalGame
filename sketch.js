@@ -126,7 +126,7 @@ function draw() {
       player2.x = mouseX+50;
       player2.rotation = 90;
     }
-    if(playe2.y<mouseY){
+    if(player2.y<mouseY){
       player2.Y = mouseY-50;
       player2.rotation = 180;
     }
